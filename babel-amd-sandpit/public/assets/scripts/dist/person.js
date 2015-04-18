@@ -6,7 +6,7 @@ define(["exports", "module"], function (exports, module) {
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	// Using a symbol here seems to ensure we have unique references per instance
-	var __height = Symbol("height");
+	var HEIGHT = Symbol();
 
 	var Person = (function () {
 		function Person(name) {
@@ -15,10 +15,11 @@ define(["exports", "module"], function (exports, module) {
 			this.name = name;
 
 			// Using a symbol allows us to also keep the variable private but use the getters and setters outside of the constructor
-			this[__height] = 0;
+			this[HEIGHT] = 0;
 
 			// This allows us to use a private variable that is scoped internally.
 			var __age = 0;
+
 			Object.defineProperty(this, "age", {
 				get: function get() {
 					return __age;
@@ -32,10 +33,10 @@ define(["exports", "module"], function (exports, module) {
 		_createClass(Person, [{
 			key: "height",
 			get: function () {
-				return this[__height];
+				return this[HEIGHT];
 			},
 			set: function (value) {
-				this[__height] = value;
+				this[HEIGHT] = value;
 			}
 		}]);
 
@@ -44,3 +45,4 @@ define(["exports", "module"], function (exports, module) {
 
 	module.exports = Person;
 });
+//# sourceMappingURL=person.js.map

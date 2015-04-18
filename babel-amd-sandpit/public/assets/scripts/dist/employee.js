@@ -43,3 +43,4 @@ define(["exports", "module", "person"], function (exports, module, _person) {
 
 	module.exports = Employee;
 });
+//# sourceMappingURL=employee.js.map

@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON("package.json"),
 		babel: {
 			options: {
-				modules: "amd"
+				modules: "amd",
+				sourceMap: true
 			},
 			dist: {
 				files: [

@@ -1,5 +1,5 @@
 // Using a symbol here seems to ensure we have unique references per instance
-var __height = Symbol("height");
+const HEIGHT = Symbol();
 
 export default class Person {
 
@@ -8,10 +8,11 @@ export default class Person {
 		this.name = name;
 		
 		// Using a symbol allows us to also keep the variable private but use the getters and setters outside of the constructor
-		this[__height] = 0;
+		this[HEIGHT] = 0;
 
 		// This allows us to use a private variable that is scoped internally.
 		var __age = 0;
+
 		Object.defineProperty(this, "age", {
 			get: () => __age,
 			set: (value) => __age = value
@@ -20,11 +21,11 @@ export default class Person {
 	}
 
 	get height() {
-		return this[__height];
+		return this[HEIGHT];
 	}
 
 	set height(value) {
-		this[__height] = value;
+		this[HEIGHT] = value;
 	}
 
 }

@@ -25,3 +25,4 @@ define(["exports", "module", "employee"], function (exports, module, _employee) 
 
 	module.exports = Manager;
 });
+//# sourceMappingURL=manager.js.map
