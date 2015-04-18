@@ -1,8 +1,10 @@
-require(["person"], function(Person) {
+require(["person", "employee"], function(Person, Employee) {
 	
 	var me = new Person("John Hornsby");
-	me.setAge("39");
 
-	alert(me.name + " you are " + me.getAge() + "years old");
+	var Efan = new Employee("Efan Hornsby");
+	Efan.age = 5;
+
+	console.log(Efan.name + " is " + Efan.age + " years old");
 
 });

@@ -1,16 +1,16 @@
 export default class Person {
 
 	constructor(name) {
+
 		this.name = name;
-		this.age = null;
-	}
 
-	setAge (age) {
-		this.age = age;
-	}
+		
+		var __age = 0;
 
-	getAge () {
-		return this.age;
-	}
+		Object.defineProperty(this, "age", {
+			get: () => __age,
+			set: (value) => __age = value
+		});
 
+	}
 }
