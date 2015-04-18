@@ -4,6 +4,7 @@ export default class Person {
 
 		this.name = name;
 
+		this.__height = 0;
 		
 		var __age = 0;
 
@@ -13,4 +14,15 @@ export default class Person {
 		});
 
 	}
+
+	get height() {
+		return this.__height;
+	}
+
+	set height(value) {
+		this.__height = value;
+	}
+
+
+
 }
