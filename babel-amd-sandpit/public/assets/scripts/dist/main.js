@@ -1,6 +1,5 @@
 require(["person"], function(Person) {
 	
-	debugger;
 	var me = new Person("John Hornsby");
 	me.setAge("39");
 
