@@ -39,13 +39,28 @@ module.exports = function(grunt) {
 				tasks: ["babel"],
 				options: { nospawn: true }
 			}
+		},
+		requirejs: {
+			compile: {
+				options: {
+					// url that is relative to the require paths
+					baseUrl: "public/assets/scripts/dist/",
+					mainConfigFile: "public/assets/scripts/config.js",
+					name: "main",
+					out: "public/assets/scripts/js/app.js",
+					optimize: "none"
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks("grunt-babel");
 	grunt.loadNpmTasks("grunt-develop");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-	grunt.registerTask("default", ["babel", "develop", "watch"]);
+	grunt.registerTask("default", ["build", "develop", "watch"]);
+
+	grunt.registerTask("build", ["babel", "requirejs"]);
 
 };

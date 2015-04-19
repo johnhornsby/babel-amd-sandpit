@@ -1,4 +1,4 @@
-define(["exports", "person", "employee", "manager"], function (exports, _person, _employee, _manager) {
+define(["exports", "person", "employee", "manager", "require"], function (exports, _person, _employee, _manager, _require) {
   "use strict";
 
   var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -8,6 +8,8 @@ define(["exports", "person", "employee", "manager"], function (exports, _person,
   var _Employee = _interopRequire(_employee);
 
   var _Manager = _interopRequire(_manager);
+
+  var _require2 = _interopRequire(_require);
 
   var me = new _Person("John Hornsby");
 

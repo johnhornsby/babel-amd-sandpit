@@ -1,6 +1,10 @@
+
+
 import Person from "person";
 import Employee from "employee";
 import Manager from "manager";
+
+import require from "require";
 
 
 var me = new Person("John Hornsby");
